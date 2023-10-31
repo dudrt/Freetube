@@ -8,7 +8,7 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 # TO-DO List
 
 - Notificação para mostrar que está tocando.
-- Fazer a parte do looping no menu da música.
+- Fazer a parte do looping no menu da música. ✔
 - Fazer a parte de mais opções no menu da música.
 - Caso as músicas estejam sendo tocadas e uma delas for deletada, remover da fila.
 
