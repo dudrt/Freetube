@@ -13,7 +13,6 @@ import MenuRoutes from "../MenuRoutes";
 
 //Armazenamento interno
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Playlist from "../Playlist";
 
 
 
@@ -39,17 +38,19 @@ export default function Principal() {
     useEffect(() => {
         start()
 
-        
+    
 
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
       () => {
+        console.log("Teclado ativado")
         setTecladoVisivel(true); 
       }
     );
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       () => {
+        console.log("Teclado desativado")
         setTecladoVisivel(false);
       }
     );
@@ -100,9 +101,10 @@ export default function Principal() {
         const objetoJSON = JSON.parse(global.info);
         const video_info = objetoJSON.videos[id]
 
-        var playlist_root = await GetNomeMusica()
+        var playlist_root = String(await AsyncStorage.getItem('Musicas Baixadas'))
 
-        if(playlist_root!="Nenhuma musica salva!" || playlist_root!="" || playlist_root!=null){
+        console.log( typeof playlist_root)
+        if(playlist_root!="Nenhuma musica salva!" || playlist_root!="" || playlist_root!=null || playlist_root!="null"){
             var array = playlist_root.split("&¨%#]")
             for(var j =0;j<array.length;j++){
                 if(array[j]===video_info.Titulo){
@@ -182,24 +184,24 @@ export default function Principal() {
         var NomeExistente = await GetNomeMusica()
         if(NomeExistente==="Nenhuma musica salva!" || NomeExistente==="" || NomeExistente===null){
             try {
-                await AsyncStorage.setItem('Musicas_Baixadas', NomeMusica);
+                await AsyncStorage.setItem('Musicas Baixadas', NomeMusica);
                 console.log("Salvou")
               } catch (e) {
-                console.log("Erro ao salvar o nome da musica") 
+                console.log("Erro ao salvar o nome da musica.") 
               }
         }else{
             try {
-                await AsyncStorage.setItem('Musicas_Baixadas',  NomeExistente+ "&¨%#]" +NomeMusica);
+                await AsyncStorage.setItem('Musicas Baixadas',  NomeExistente+ "&¨%#]" +NomeMusica);
                 console.log("Salvou")
               } catch (e) {
-                console.log("Erro ao salvar o nome da musica") 
+                console.log("Erro ao salvar o nome da musica.") 
               }
         }
     }
 
     async function GetNomeMusica (){
         try{
-            return await AsyncStorage.getItem('Musicas_Baixadas');
+            return await AsyncStorage.getItem('Musicas Baixadas');
         }catch{
             return "Nenhuma musica salva!"
         }

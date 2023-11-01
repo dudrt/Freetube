@@ -52,7 +52,7 @@ export default function Playlist() {
     //Deleta a musica do app
     const Delete = async (posicao) => {
 
-        if (Playlist != "Musicas_Baixadas") {
+        if (Playlist != "Musicas Baixadas") {
             DeletarUnicaPlaylist(posicao)
             console.log("Passou pela função e retornou")
             return
@@ -158,7 +158,7 @@ export default function Playlist() {
 
             const tracks_nova = await TrackPlayer.getQueue();
             console.log("Track está assim:"+tracks_nova)
-        }else if(Playlist=="Musicas_Baixadas"){
+        }else if(Playlist=="Musicas Baixadas"){
             const tracks = await TrackPlayer.getQueue();
             for(var i=0;i<tracks.length;i++){
                 if(tracks[i].title==musica_retirar){
@@ -175,7 +175,7 @@ export default function Playlist() {
     const RemoverMusicaPlaylists = async (musica_del) => {
         var playlists = await AsyncStorage.getItem('playlists');
         let array_playlist = playlists.split("&¨%#]")
-        if (array_playlist == "Musicas_Baixadas") {
+        if (array_playlist == "Musicas Baixadas") {
         } else {
             for (let i = 1; i < array_playlist.length; i++) {
                 let musicas_playlist = await AsyncStorage.getItem(array_playlist[i]);
@@ -352,7 +352,7 @@ export default function Playlist() {
                     </View>
                     <View style={style.new_playlist_scroll_view}>
                         <ScrollView style={style.new_playlist_scrollview}>
-                            {(playlistsExistentes.map((playlist, index) => (playlist=="Musicas_Baixadas" || playlist ==Playlist?(""):(
+                            {(playlistsExistentes.map((playlist, index) => (playlist=="Musicas Baixadas" || playlist ==Playlist?(""):(
                                 <View key={index} style={style.playlist_nome_view}>
                                     <TouchableOpacity onPress={() => {
                                         AddNovaPlaylist(playlist, selectedClipName)

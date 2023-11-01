@@ -53,7 +53,7 @@ export default function Biblioteca() {
     const playlist = await AsyncStorage.getItem('playlists');
 
     if (playlist == null || playlist === "") {
-      await AsyncStorage.setItem("playlists", "Musicas_Baixadas")
+      await AsyncStorage.setItem("playlists", "Musicas Baixadas")
       return await AsyncStorage.getItem('playlists');
     } else {
       console.log(playlist)
@@ -105,7 +105,7 @@ export default function Biblioteca() {
       </TouchableOpacity>
 
       <ScrollView>
-        {playlistShow.map((playlist, index) => (playlist != "Musicas_Baixadas" ? (
+        {playlistShow.map((playlist, index) => (playlist != "Musicas Baixadas" ? (
           <View key={index} style={style.list_playlist_view}>
             <TouchableOpacity style={style.list_playlist_button} onPress={() => {
               setPlaylist(playlist)
