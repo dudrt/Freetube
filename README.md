@@ -18,9 +18,8 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 O aplicativo possui diversas funcionalidades e opções, deixando assim, caso fosse tudo abordado, um documento muito longo.<br>Será então abordado as principais funções, as demais funcionalidades são padrões de qualquer Streaming de música.<br>
 
 - <a href='#procurar-videos-do-youtube'>Procurar videos do Youtube</a>.
-- <a href='#baixar-músicas'>Baixar músicas</a>.
-- <a href='#navegação-de-telat'>Navegação de Tela</a>.
-- <a href='#criar-playlist'>Criar Playlists</a>.
+- <a href='#navegação-de-telas'>Navegação de Telas</a>.
+- <a href='#criar-playlists'>Criar Playlists</a>.
 - <a href='#dentro-da-playlist'>Dentro da Playlist</a>.
 - <a href='#menu-da-música'>Menu da Música</a>.
 
