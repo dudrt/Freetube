@@ -9,8 +9,8 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 
 - Notificação para mostrar que está tocando. ❌ (Notificação da biblioteca com problema)
 - Fazer a parte do looping no menu da música. ✔
-- Caso as músicas estejam sendo tocadas e uma delas for deletada, remover da fila.
-- Identificar se já existe uma música igual na playlist de baixados.
+- Caso as músicas estejam sendo tocadas e uma delas for deletada, remover da fila. ✔
+- Identificar se já existe uma música igual na playlist de baixados. ✔
 
 # Principais Funcionalidades
 

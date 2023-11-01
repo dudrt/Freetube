@@ -174,18 +174,15 @@ export default function Playlist() {
         var playlists = await AsyncStorage.getItem('playlists');
         let array_playlist = playlists.split("&¨%#]")
         if (array_playlist == "Musicas_Baixadas") {
-            console.log("aaaa")
         } else {
             for (let i = 1; i < array_playlist.length; i++) {
                 let musicas_playlist = await AsyncStorage.getItem(array_playlist[i]);
                 try {
                     let musicas = musicas_playlist.split("&¨%#]")
                     if (musicas == null || musicas == "") {
-                        console.log("deu nulo")
 
                     } else {
                         for (let j = 0; j < musicas.length; j++) {
-                            console.log("248-Musicas da Playlist:" + musicas[j])
                             console.log(musica_del)
                             if (musicas[j] === musica_del) {
                                 musicas.splice(j, 1)

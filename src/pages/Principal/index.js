@@ -13,6 +13,7 @@ import MenuRoutes from "../MenuRoutes";
 
 //Armazenamento interno
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Playlist from "../Playlist";
 
 
 
@@ -96,6 +97,27 @@ export default function Principal() {
     let dirs = ReactNativeBlobUtil.fs.dirs
 
     const Download = async (id) => {
+        const objetoJSON = JSON.parse(global.info);
+        const video_info = objetoJSON.videos[id]
+
+        var playlist_root = await GetNomeMusica()
+
+        if(playlist_root!="Nenhuma musica salva!" || playlist_root!="" || playlist_root!=null){
+            var array = playlist_root.split("&¨%#]")
+            for(var j =0;j<array.length;j++){
+                if(array[j]===video_info.Titulo){
+                    Snackbar.show({
+                        text: 'Esta música já foi baixada!',
+                        duration: Snackbar.LENGTH_SHORT,        
+                      });
+                      return
+                }
+            }
+        }
+
+
+
+
         
         Snackbar.show({
             text: 'Baixando...',
@@ -104,8 +126,7 @@ export default function Principal() {
         
           console.log("Global info:"+global.info)
 
-        const objetoJSON = JSON.parse(global.info);
-        const video_info = objetoJSON.videos[id]
+        
         const video_id = video_info.VideoId
         const nome_musica = video_info.Titulo
         const img = video_info.Thumbnail
