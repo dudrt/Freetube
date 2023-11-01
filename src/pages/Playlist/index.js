@@ -146,8 +146,10 @@ export default function Playlist() {
     }
     
     const ArrumarTrack = async (posicao,musica_retirar) =>{
-        console.log("Playlist que está tocando:"+PlaylistAtual)
-        console.log("Playlist que será está:"+Playlist)
+
+        if(!playing){
+            return
+        }
 
         if(PlaylistAtual==Playlist){
         let trackObject = await TrackPlayer.getTrack(posicao);
