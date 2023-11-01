@@ -17,17 +17,19 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 
 O aplicativo possui diversas funcionalidades e opções, deixando assim, caso fosse tudo abordado, um documento muito longo.<br>Será então abordado as principais funções, as demais funcionalidades são padrões de qualquer Streaming de música.<br>
 
-- <a href='procurar-videos-do-youtube'>Procurar videos do Youtube</a>.
-- <a href='baixar-musicas'>Baixar músicas</a>.
-- <a href='criar-playlist'>Criar Playlists</a>.
-
+- <a href='#procurar-videos-do-youtube'>Procurar videos do Youtube</a>.
+- <a href='#baixar-músicas'>Baixar músicas</a>.
+- - <a href='#navegação-de-telat'>Navegação de Tela</a>.
+- <a href='#criar-playlist'>Criar Playlists</a>.
+- <a href='#dentro-da-playlist'>Dentro da Playlist</a>.
+- <a href='#menu-da-música'>Menu da Música</a>.
 
 
 
 # Procurar videos do Youtube
 Este aplicativo tem como função principal buscar e fazer o download de videos do youtube. Para isso, você não precisa copiar o link do vídeo, basta pesquisar diretamente dentro do aplicativo e os 10 primeiros resultados serão mostrados na tela.<br>
 
-<img src="github_img/img_principal.png">
+<img src="github_img/img_principal.png" width="20%">
 
 <br>
 # Baixar músicas
@@ -41,27 +43,27 @@ Caso a mensagem seja:
 
 # Navegação de Telas
 
-Para navegar entre telas é utilizado o menu inferior no qual um botão vai para a tela principal e o outro para a tela de playlists.<br>
-<img src="github_img/menu_navegar.png">
+Para navegar entre telas é utilizado o menu inferior no qual um botão vai para a tela principal e o outro para a tela de playlists.<br><br>
+<img src="github_img/menu_navegar.png" width="20%">
 
 
 # Criar Playlists
 
 Na tela `Biblioteca` pode-se criar uma nova playlist clicando no botão `Nova Playlist`.<br>
-<img src="github_img/bibliotecas.png"><br>
-Todas as músicas baixadas podem ser encontradas em `Musicas Baixadas`.<br>
+Todas as músicas baixadas podem ser encontradas em `Musicas Baixadas`.<br><br>
+
+<img src="github_img/bibliotecas.png" width="20%"><br>
 
 # Dentro da Playlist
 
-Ao entrar em uma playlist pode ser visto as músicas nela contidas e um botão em cima que irá rodar toda a playlist, ou então clicando em cima da musica, irá tocar a playlist partindo da música escolhida.
-<img src="github_img/dentro_biblioteca.png"><br>
+Ao entrar em uma playlist pode ser visto as músicas nela contidas e um botão em cima que irá rodar toda a playlist, ou então clicando em cima da musica, irá tocar a playlist partindo da música escolhida.<br><br>
+<img src="github_img/dentro_biblioteca.png" width="20%"><br>
 
 
 # Menu da Música
 
-Ao iniciar uma música, um menu na parte inferior da tela aparece, nele é possivel ver a imagem, nome da música e função pausar ou despausar, caso clicada, abre um menu, onde possui mais funções.
-<img src="github_img/musica_menu.png"><br>
+Ao iniciar uma música, um menu na parte inferior da tela aparece, nele é possivel ver a imagem, nome da música e função pausar ou despausar, caso clicada, abre um menu, onde possui mais funções.<br><br>
+<img src="github_img/musica_menu.png" width="20%"><br>
 
 
-# Opções e Funcionalidades secundárias
 
