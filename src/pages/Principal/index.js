@@ -21,8 +21,6 @@ export default function Principal() {
 
     const {start , playing} = useMusicPlayer()
 
-    const [DownloadInProgress, setDownloadInProgress] = useState(false)
-
     const [nome, setNome] = useState("")
 
     const [views, setViews] = useState([]);
@@ -98,14 +96,7 @@ export default function Principal() {
     let dirs = ReactNativeBlobUtil.fs.dirs
 
     const Download = async (id) => {
-        if(DownloadInProgress === true){
-            Snackbar.show({
-                text: 'Espere o download acabar!',
-                duration: Snackbar.LENGTH_SHORT,        
-              });
-            return
-        }
-        setDownloadInProgress(true)
+        
         Snackbar.show({
             text: 'Baixando...',
             duration: Snackbar.LENGTH_SHORT,        
@@ -152,7 +143,6 @@ export default function Principal() {
                     text: 'Música Salva!',
                     duration: Snackbar.LENGTH_SHORT,        
                   });
-                setDownloadInProgress(false)
                 SalvarNome(nome_musica)
 
             }).catch(()=>{

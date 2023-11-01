@@ -10,6 +10,7 @@ import RNFS from 'react-native-fs';
 import Snackbar from 'react-native-snackbar';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import TrackPlayer from "react-native-track-player";
 
 export default function Playlist() {
     const [downloadedClips, setDownloadedClips] = useState([]);
@@ -22,9 +23,10 @@ export default function Playlist() {
     const navigation = useNavigation();
 
 
-    const { playing, Playlist, PlayPlaylist } = useMusicPlayer()
+    const { playing, Playlist, PlayPlaylist,PlaylistAtual } = useMusicPlayer()
 
     useEffect(() => {
+        console.log(PlaylistAtual)
         init()
     }, []);
 
@@ -59,7 +61,7 @@ export default function Playlist() {
         var musicas = await GetNomeMusicas()
 
         var nome_musica = musicas.split("&¨%#]")
-
+        var musica_retirar_player = nome_musica[posicao]
         var nome_arquivo = nome_musica[posicao]
         nome_musica.splice(posicao, 1)
         // -----------------------------------------------
@@ -89,8 +91,8 @@ export default function Playlist() {
         RNFS.exists("file:///data/user/0/com.freetube/files/" + file_name)
             .then((existe) => {
                 if (existe) {
-                    console.log("Existe e será deletado")
                     RemoverMusicaPlaylists(nome_arquivo)
+                    ArrumarTrack(posicao,musica_retirar_player)
                     RNFS.unlink("file:///data/user/0/com.freetube/files/" + file_name);
 
                 } else {
@@ -108,13 +110,13 @@ export default function Playlist() {
         var musicas = await GetNomeMusicas()
         try {
             var array_musicas = musicas.split("&¨%#]")
-            console.log(array_musicas)
             if (array_musicas == undefined) {
                 await AsyncStorage.setItem(Playlist, "")
             } else {
 
+                var musica_retirar_player = array_musicas[posicao]
                 array_musicas.splice(posicao, 1)
-
+                
                 var salvar;
                 if (array_musicas.length === 1) {
                     salvar = array_musicas[0]
@@ -128,16 +130,42 @@ export default function Playlist() {
                 }
 
                 await AsyncStorage.setItem(Playlist, salvar)
+                ArrumarTrack(posicao,musica_retirar_player)
+                init()
                 Snackbar.show({
                     text: 'Música apagada!',
                     duration: Snackbar.LENGTH_SHORT,
                 });
-                init()
+                
             }
         } catch {
             console.log("Ocorreu um erro inesperado")
 
 
+        }
+    }
+    
+    const ArrumarTrack = async (posicao,musica_retirar) =>{
+        console.log("Playlist que está tocando:"+PlaylistAtual)
+        console.log("Playlist que será está:"+Playlist)
+
+        if(PlaylistAtual==Playlist){
+        let trackObject = await TrackPlayer.getTrack(posicao);
+        console.log("Track que será excluída:"+trackObject.title)
+            await TrackPlayer.remove([posicao]);
+
+            const tracks_nova = await TrackPlayer.getQueue();
+            console.log("Track está assim:"+tracks_nova)
+        }else if(Playlist=="Musicas_Baixadas"){
+            const tracks = await TrackPlayer.getQueue();
+            for(var i=0;i<tracks.length;i++){
+                if(tracks[i].title==musica_retirar){
+                    console.log("Musica Retirada:"+tracks[i].title)
+                    await TrackPlayer.remove([i]);
+                    const tracks_nova = await TrackPlayer.getQueue();
+                    console.log("Track está assim:"+tracks_nova.toString())
+                }
+            }
         }
     }
 
@@ -152,7 +180,6 @@ export default function Playlist() {
                 let musicas_playlist = await AsyncStorage.getItem(array_playlist[i]);
                 try {
                     let musicas = musicas_playlist.split("&¨%#]")
-                    console.log(musicas)
                     if (musicas == null || musicas == "") {
                         console.log("deu nulo")
 

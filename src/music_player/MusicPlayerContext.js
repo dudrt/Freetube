@@ -110,19 +110,19 @@ export const MusicPlayerProvider = ({ children }) => {
 
 
 
-    TrackPlayer.updateOptions({
-      // Media controls capabilities
-      capabilities: [
-          // Capability.Play,
-          // Capability.Pause,
-          // Capability.SkipToNext,
-          // Capability.SkipToPrevious,
-          // Capability.Stop,
-      ],
+    // TrackPlayer.updateOptions({
+    //   // Media controls capabilities
+    //   capabilities: [
+    //       // Capability.Play,
+    //       // Capability.Pause,
+    //       // Capability.SkipToNext,
+    //       // Capability.SkipToPrevious,
+    //       // Capability.Stop,
+    //   ],
   
-      // Capabilities that will show up when the notification is in the compact form on Android
-      compactCapabilities: [],
-      })
+    //   // Capabilities that will show up when the notification is in the compact form on Android
+    //   compactCapabilities: [],
+    //   })
 
 
     
@@ -134,43 +134,57 @@ export const MusicPlayerProvider = ({ children }) => {
   };
 
 
-  const RepMusica = async (position) => {
-    var musicas = await AsyncStorage.getItem('nome_musica');
-    musicas = musicas.split("&¨%#]")
-    var nome_musica = musicas[position]
-    var file_name = nome_musica.replaceAll(/[^a-zA-Z0-9.\-@/._]/g, "");
-    var suporte = file_name.split(" ");
-    file_name = suporte[0];
-    for (var i = 1; i < suporte.length; i++) {
-      file_name += "_" + suporte[i];
-    }
-    file_name += ".mp3";
+  // const RepMusica = async (position) => {
+  //   var musicas = await AsyncStorage.getItem('nome_musica');
+  //   musicas = musicas.split("&¨%#]")
+  //   var nome_musica = musicas[position]
+  //   var file_name = nome_musica.replaceAll(/[^a-zA-Z0-9.\-@/._]/g, "");
+  //   var suporte = file_name.split(" ");
+  //   file_name = suporte[0];
+  //   for (var i = 1; i < suporte.length; i++) {
+  //     file_name += "_" + suporte[i];
+  //   }
+  //   file_name += ".mp3";
 
-    await TrackPlayer.add({
-      title: musicas[position],
-      url: 'file:///data/user/0/com.freetube/files/' + file_name,
+  //   await TrackPlayer.add({
+  //     title: musicas[position],
+  //     url: 'file:///data/user/0/com.freetube/files/' + file_name,
 
-    }).then(() => {
-      console.log('Nova música adicionada à lista de reprodução com sucesso.' + id);
-      SetPlaying(true)
-      var array = TrackElements
-      array.push(musicas[position])
-      SetTrackElements(array)
-      console.log(TrackElements)
-    })
-      .catch((error) => {
-        console.error('Erro ao adicionar nova música à lista de reprodução:', error);
-      });
-    global.id += 1
+  //   }).then(() => {
+  //     console.log('Nova música adicionada à lista de reprodução com sucesso.' + id);
+  //     SetPlaying(true)
+  //     var array = TrackElements
+  //     array.push(musicas[position])
+  //     SetTrackElements(array)
+  //     console.log(TrackElements)
+  //   })
+  //     .catch((error) => {
+  //       console.error('Erro ao adicionar nova música à lista de reprodução:', error);
+  //     });
+  //   global.id += 1
 
-    const state = await TrackPlayer.getState();
-    if (state !== State.Playing) {
-      TrackPlayer.play()
-    }
+  //   const state = await TrackPlayer.getState();
+  //   if (state !== State.Playing) {
+  //     TrackPlayer.play()
+  //   }
 
-  }
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const PlayStop = async () => {
+        
     const state = await TrackPlayer.getState();
     if (state === State.Playing) {
       TrackPlayer.pause()
@@ -193,6 +207,7 @@ export const MusicPlayerProvider = ({ children }) => {
           console.log('A música terminou de tocar:', data.track);
           
         } else {
+          console.log(data.position)
           let trackIndex = await TrackPlayer.getCurrentTrack();
           let trackObject = await TrackPlayer.getTrack(trackIndex);
           console.log(trackObject.title)
@@ -260,7 +275,6 @@ export const MusicPlayerProvider = ({ children }) => {
     <MusicPlayerContext.Provider value={{
       start,
       PlayStop,
-      RepMusica,
       playing,
       nomeMusicaAtual,
       TrackElements,
