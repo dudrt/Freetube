@@ -13,6 +13,12 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 - Identificar se já existe uma música igual na playlist de baixados. ✔
 - Ao terminar de tocar a playlist, modificar o estado de `MusicPlaying` para false.
 
+# Principais Informações
+Este projeto está sendo feito *100%* por mim.<br>
+Linguagem Utilizada: JavaScript <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' width="2%"><br>
+Tecnologia Utilizada: React Native, CLI, 0.71.0 <img src='https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' width="2%"><br>
+Principal Biblioteca utilizada:<a href='https://rntp.dev'>Track Player</a>, 3.2.0
+
 # Principais Funcionalidades
 
 O aplicativo possui diversas funcionalidades e opções, deixando assim, caso fosse tudo abordado, um documento muito longo.<br>Será então abordado as principais funções, as demais funcionalidades são padrões de qualquer Streaming de música.<br>
