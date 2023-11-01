@@ -19,7 +19,7 @@ O aplicativo possui diversas funcionalidades e opções, deixando assim, caso fo
 
 - <a href='#procurar-videos-do-youtube'>Procurar videos do Youtube</a>.
 - <a href='#baixar-músicas'>Baixar músicas</a>.
-- - <a href='#navegação-de-telat'>Navegação de Tela</a>.
+- <a href='#navegação-de-telat'>Navegação de Tela</a>.
 - <a href='#criar-playlist'>Criar Playlists</a>.
 - <a href='#dentro-da-playlist'>Dentro da Playlist</a>.
 - <a href='#menu-da-música'>Menu da Música</a>.
