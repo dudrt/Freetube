@@ -11,6 +11,7 @@ Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trab
 - Fazer a parte do looping no menu da música. ✔
 - Caso as músicas estejam sendo tocadas e uma delas for deletada, remover da fila. ✔
 - Identificar se já existe uma música igual na playlist de baixados. ✔
+- Ao terminar de tocar a playlist, modificar o estado de `MusicPlaying` para false.
 
 # Principais Funcionalidades
 
