@@ -24,7 +24,7 @@ O aplicativo possui diversas funcionalidades e opções, deixando assim, caso fo
 
 
 # Procurar videos do Youtube
-
+Este aplicativo tem como função principal buscar e fazer o download de videos do youtube. Para isso, você não precisa copiar o link do vídeo, basta pesquisar diretamente dentro do aplicativo e os 10 primeiros resultados serão mostrados na tela.
 # Baixar músicas
 
 # Criar Playlists
