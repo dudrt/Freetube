@@ -46,7 +46,7 @@ Para navegar entre telas é utilizado o menu inferior no qual um botão vai para
 # Criar Playlists
 
 Na tela ´Biblioteca´ pode-se criar uma nova playlist clicando no botão `Nova Playlist`.<br>
-<img src="github_img/">
+<img src="github_img/"><br>
 Todas as músicas baixadas podem ser encontradas em `Musicas Baixadas`.<br>
 
 # Dentro da Playlist
