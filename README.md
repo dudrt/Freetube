@@ -5,13 +5,19 @@ Este projeto tem como objetivo ser um aplicativo para download de musicas fácil
 # 🔧 Este é um projeto que está em desenvolvimento. 
 Atualmente estou trabalhando em suas funcionalidades e logo irei começar a trabalhar no desempenho e design do aplicativo.
 
+# APLICATIVO NÃO ESTÁ MAIS FUNCIONANDO!
+
+Devido a problemas com a API <a href="https://github.com/dudrt/Youtube_API">Youtube API</a> que era utilizada no aplicativo ele não é mais capaz de baixar nem pesquisar musicas. A mesma parou de funcionar graças ao local aonde era hospedado parar de aceitar este tipo de aplicação!
+<BR>
+Futuro aplicativo parecido entrará desenvolvimento assim que for encontrado alguma API confiavel de download de musicas.
+
 # TO-DO List
 
 - Notificação para mostrar que está tocando. ❌ (Notificação da biblioteca com problemas)
 - Fazer a parte do looping no menu da música. ✔
 - Caso as músicas estejam sendo tocadas e uma delas for deletada, remover da fila. ✔
 - Identificar se já existe uma música igual na playlist de baixados. ✔
-- Ao terminar de tocar a playlist, modificar o estado de `MusicPlaying` para false.
+- Ao terminar de tocar a playlist, modificar o estado de `MusicPlaying` para false. 
 
 # Principais Informações
 Este projeto está sendo feito *100%* por mim.<br>
